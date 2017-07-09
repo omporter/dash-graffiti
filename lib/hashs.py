@@ -1,8 +1,9 @@
 # hashs.py
-import hashlib
 import binascii
+import hashlib
 
-from lib.utils import *
+
+from lib.utils import * 
 
 
 def double_sha256(data):
@@ -21,7 +22,7 @@ def sha256(string):
 #
 def format_hash(hash_):
     return hash_[::-1].hex()
-    #return str(binascii.hexlify(hash_[::-1]).decode("utf-8"))
+    # return str(binascii.hexlify(hash_[::-1]).decode("utf-8"))
 
 def json_changebase(obj, changer):
     if isinstance(obj, string_or_bytes_types):
@@ -46,6 +47,6 @@ def from_byte_to_int(a):
 
 def safe_hexlify(a):  
     return a.hex()
-    #return str(binascii.hexlify(a), 'utf-8')
+    # return str(binascii.hexlify(a), 'utf-8')
 
 #

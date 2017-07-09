@@ -1,13 +1,14 @@
 # graffiti.py
 
-from lib.hashs import *
-from lib.b58 import *
+from lib.b58 import b58encode
+from lib.hashs import double_sha256
+
 
 long = int
 _bchr = lambda x: bytes([x])
 _bord = lambda x: x
 
-def generate_graffiti_address(string): # from string
+def generate_graffiti_address(string):  # from string
    data = string
    length = len(data)
    print("Data lenght: " + str(length))
