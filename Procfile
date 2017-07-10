@@ -1,1 +1,1 @@
-web: python dash-graffiti.py
+web: gunicorn --log-file - app:app
