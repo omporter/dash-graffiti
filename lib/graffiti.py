@@ -15,7 +15,7 @@ def generate_graffiti_address(string):  # from string
    if length > 20:
       print("ERROR: Input string is too long")
       print("Insert 20 characters or less")
-      errmsg = "ERROR: Input string is too long - " + length + "chars"
+      errmsg = "ERROR: Input string is too long"
       return errmsg
    
    for x in range(length, 20):
