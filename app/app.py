@@ -20,8 +20,8 @@ def index():
         string = request.form['string']
         if form.validate():
             # Save the comment here.
-            flash('Write graffiti "' + string +
-                  '" to blockchain by sending some duffs to:')
+            flash('Write graffiti "' + string + 
+                  '" to blockchain by sending at least 5460 duffs to:')
             flash('')
             flash(generate_graffiti_address(string))
         else:
