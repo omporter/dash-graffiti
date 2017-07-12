@@ -29,7 +29,7 @@ def index():
 
     return render_template('index.html', form=form)
 
-@app.route('/<string:strApi>')
+@app.route('/<tag>', methods=['GET', 'POST'])
 def blindApi():
    return 'blind api'
 
