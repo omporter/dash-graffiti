@@ -17,16 +17,16 @@ class ReusableForm(Form):
 @app.route('/<tag>', methods=['GET', 'POST'])
 def index(tag=None):
     if tag != None:
-        return 'blind api'
+        return generate_graffiti_address(tag)
     form = ReusableForm(request.form)
     if request.method == 'POST':
-        string = request.form['string']
+        tag = request.form['string']
         if form.validate():
             # Save the comment here.
-            flash('Write graffiti "' + string + 
+            flash('Write graffiti "' + tag + 
                   '" to blockchain by sending (at least) 5460 duffs to:')
             flash('')
-            flash(generate_graffiti_address(string))
+            flash(generate_graffiti_address(tag))
         else:
             flash('All the form fields are required. ')
 
