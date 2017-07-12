@@ -14,7 +14,10 @@ class ReusableForm(Form):
 
 
 @app.route('/', methods=['GET', 'POST'])
-def index():
+@app.route('/<tag>', methods=['GET', 'POST'])
+def index(tag=None):
+    if tag != None:
+        return 'blind api'
     form = ReusableForm(request.form)
     if request.method == 'POST':
         string = request.form['string']
@@ -28,12 +31,6 @@ def index():
             flash('All the form fields are required. ')
 
     return render_template('index.html', form=form)
-
-@app.route('/<tag>', methods=['GET', 'POST'])
-def blindApi():
-   return 'blind api'
-
-
 
 
 if __name__ == "__main__":
