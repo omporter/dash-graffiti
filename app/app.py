@@ -21,13 +21,20 @@ def index():
         if form.validate():
             # Save the comment here.
             flash('Write graffiti "' + string + 
-                  '" to blockchain by sending at least 5460 duffs to:')
+                  '" to blockchain by sending (at least) 5460 duffs to:')
             flash('')
             flash(generate_graffiti_address(string))
         else:
             flash('All the form fields are required. ')
 
     return render_template('index.html', form=form)
+
+@app.route('/<string:strApi>')
+def blindApi():
+   return 'blind api'
+
+
+
 
 if __name__ == "__main__":
     app.run()
